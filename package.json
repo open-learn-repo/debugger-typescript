@@ -4,8 +4,8 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "module",
-  "main": "index.ts",
+  "type": "commonjs",
+  "main": "src/index.ts",
   "scripts": {},
   "devDependencies": {
     "rimraf": "^6.1.3"
