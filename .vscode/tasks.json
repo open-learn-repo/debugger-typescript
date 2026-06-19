@@ -12,7 +12,7 @@
 		{
 			"type": "shell",
 			"command": "rimraf",
-			"args": ["'compile/**/*.{js,map}'", "-g"],
+			"args": ["'!compile/.gitkeep'", "'compile/**/*'", "-g"],
 			"problemMatcher": [],
 			"group": "build",
 			"label": "rimraf:clean-tsc-compileFile",
