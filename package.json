@@ -6,5 +6,8 @@
   "author": "",
   "type": "module",
   "main": "index.ts",
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "rimraf": "^6.1.3"
+  }
 }

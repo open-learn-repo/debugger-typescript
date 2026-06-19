@@ -5,16 +5,18 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "debugger typescript for tsc",
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
       "program": "${file}",
-      "preLaunchTask": "tsc: build - tsconfig.json",
+      "preLaunchTask": "tsc:build",
+			"postDebugTask": "rimraf:clean-tsc-compileFile",
       "outFiles": ["${workspaceFolder}/compile/**/*.js"],
-			"resolveSourceMapLocations": [
+      "resolveSourceMapLocations": [
 				"${workspaceFolder}/**",
 				"!**/node_modules/**"
-			]
+			],
+			"console": "integratedTerminal"
     }
 	]
 }

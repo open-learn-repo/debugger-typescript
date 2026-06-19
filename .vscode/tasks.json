@@ -2,13 +2,20 @@
 	"version": "2.0.0",
 	"tasks": [
     {
-      "type": "typescript",
-      "tsconfig": "tsconfig.json",
-      "problemMatcher": [
-        "$tsc"
-      ],
+      "type": "shell",
+			"command": "tsc",
+			"args": ["--project", "${workspaceFolder}\\tsconfig.json"],
+      "problemMatcher": ["$tsc"],
       "group": "build",
-      "label": "tsc: build - tsconfig.json"
-    }
+      "label": "tsc:build"
+    },
+		{
+			"type": "shell",
+			"command": "rimraf",
+			"args": ["'compile/**/*.{js,map}'", "-g"],
+			"problemMatcher": [],
+			"group": "build",
+			"label": "rimraf:clean-tsc-compileFile",
+		}
 	]
 }
