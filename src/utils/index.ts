@@ -10,17 +10,23 @@ async function delay(ms: number, cb?: Function) {
 	})
 }
 
-function randomVal(end: number): number;
-function randomVal(start: number, end: number): number
-function randomVal(start: number, end?: number) {
-	const val = Math.random();
-	const len = Array.from(arguments).length;
-	if(len === 1) {
-		return Math.floor(val * start) + 1
-	} else if(len === 2) {
-		return Math.floor(val * end!) + start + 1
-	} else {
-		throw new Error("randomVal 函数参数大于两个！")
+function randomVal(scope: any[]): number; // 从scope中随机取一个值
+function randomVal(start: number, end: number): number; // 从start~end中随机取一个值，但取不到end
+function randomVal(param: number | any[], end?: number) {
+	if(Array.isArray(param)) {
+		const len = param.length;
+		const arrIdx = randomVal(0, len);
+		return param[arrIdx];
+	} else if(Number.isInteger(param)) {
+		if(!end) {
+			throw new Error("第二个参数必须存在");
+		}
+		const start = param;
+		if(end < start) {
+			throw new Error("第二个参数必须大于等于第一个参数");
+		}
+		const limit = end - start;
+		return Math.floor(Math.random() * limit) + start
 	}
 }
 

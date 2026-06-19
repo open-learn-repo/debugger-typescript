@@ -24,10 +24,11 @@ class ApiError extends Error {
 
 
 async function fetchUser(id: number): Promise<User> {
-	await delay(300);
+	const delayMs = randomVal(500, 2000);
+	await delay(delayMs);
 
 	if(id <= 0) {
-		throw new ApiError("无效的用户 ID", 400);
+		throw new ApiError(`无效的用户 ID:${id}`, 400);
 	}
 
 	// 模拟数据库查询
@@ -52,7 +53,7 @@ function greet(user: User): string {
 
 (async function() {
   try {
-		const id = randomVal(-5, 5);
+		const id = randomVal([0, 1, 2, 3, 4, 6]);
     const user1 = await fetchUser(id);
     console.log("获取用户成功:", greet(user1));
   } catch (error) {
