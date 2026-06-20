@@ -1,4 +1,4 @@
-import { delay, randomVal } from "./utils/index";
+import { delay, randomVal } from "./utils/index.ts";
 
 interface User {
   id: number;

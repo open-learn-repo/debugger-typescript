@@ -5,18 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "debugger typescript for tsc",
+      "name": "debugger typescript for tsx",
       "type": "node",
       "request": "launch",
       "program": "${file}",
-      "preLaunchTask": "tsc:build",
-      "postDebugTask": "rimraf:clean-tsc-compileFile",
-      "outFiles": ["${workspaceFolder}/compile/**/*.js"],
-      "resolveSourceMapLocations": [
-        "${workspaceFolder}/**",
-        "!**/node_modules/**"
-      ],
-      "skipFiles": ["<node_internals>/**"]
+      "runtimeExecutable": "tsx",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ]
     }
   ]
 }
