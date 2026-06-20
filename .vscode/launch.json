@@ -2,21 +2,21 @@
 	// 使用 IntelliSense 了解相关属性。
 	// 悬停以查看现有属性的描述。
 	// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "debugger typescript for tsc",
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debugger typescript for tsc",
       "type": "node",
       "request": "launch",
       "program": "${file}",
       "preLaunchTask": "tsc:build",
-			"postDebugTask": "rimraf:clean-tsc-compileFile",
+      "postDebugTask": "rimraf:clean-tsc-compileFile",
       "outFiles": ["${workspaceFolder}/compile/**/*.js"],
       "resolveSourceMapLocations": [
-				"${workspaceFolder}/**",
-				"!**/node_modules/**"
-			],
-			"console": "integratedTerminal"
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "skipFiles": ["<node_internals>/**"]
     }
-	]
+  ]
 }

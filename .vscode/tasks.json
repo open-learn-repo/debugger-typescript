@@ -1,21 +1,21 @@
 {
-	"version": "2.0.0",
-	"tasks": [
+  "version": "2.0.0",
+  "tasks": [
     {
       "type": "shell",
-			"command": "tsc",
-			"args": ["--project", "${workspaceFolder}\\tsconfig.json"],
+      "command": "tsc",
+      "args": ["--project", "${workspaceFolder}\\tsconfig.json"],
       "problemMatcher": ["$tsc"],
       "group": "build",
       "label": "tsc:build"
     },
-		{
-			"type": "shell",
-			"command": "rimraf",
-			"args": ["'!compile/.gitkeep'", "'compile/**/*'", "-g"],
-			"problemMatcher": [],
-			"group": "build",
-			"label": "rimraf:clean-tsc-compileFile",
-		}
-	]
+    {
+      "type": "shell",
+      "command": "rimraf",
+      "args": ["'!compile/.gitkeep'", "'compile/**/*'", "-g"],
+      "problemMatcher": [],
+      "group": "build",
+      "label": "rimraf:clean-tsc-compileFile",
+    }
+  ]
 }
