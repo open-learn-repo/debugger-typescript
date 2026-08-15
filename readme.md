@@ -1,8 +1,8 @@
-### 此项目是一个调试TypeScript的项目
+### 介绍
 
-#### 调试脚本
+此分支是一个借助tsx包调试TypeScript的项目
 
-> 该调试是基于[tsx](https://github.com/privatenumber/tsx)来调试`typescript`的
+### 调试脚本
 
 位置在：`.vscode/launch.json`中`name`为`debugger typescript for tsx`的脚本
 
